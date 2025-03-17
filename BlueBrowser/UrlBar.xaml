@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="BlueBrowser.UrlBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BlueBrowser"
+             mc:Ignorable="d" 
+             d:DesignHeight="59.494" d:DesignWidth="600">
+    <UserControl.Resources>
+        <Style TargetType="TextBox" x:Key="urlTextBoxStyle">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1.0" ScaleY="1.0"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <!-- Set the CornerRadius here -->
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="0,0,0,10">
+        <Button x:Name="backNav" Content="&lt;" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="20,5,0,0" Click="NavBack" Style="{StaticResource CustomButtonStyle}"/>
+        <local:urlTextBox x:Name="txtUrl" TextAlignment="left" VerticalContentAlignment="Top" Width="400" Height="50" Margin="0" Style="{StaticResource urlTextBoxStyle}" />
+        <Button x:Name="goNav" Content="GO" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right" Margin="0,5,10,0" Click="NavGo" Style="{StaticResource CustomButtonStyle}"/>
+
+    </Grid>
+</UserControl>

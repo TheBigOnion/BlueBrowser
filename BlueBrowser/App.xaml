@@ -1,0 +1,18 @@
+﻿<Application x:Class="BlueBrowser.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BlueBrowser"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="TabButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="AddTabTab" TargetType="TabItem">
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Background" Value="#2554c7"/>
+            <Setter Property="Foreground" Value="#fff"/>
+        </Style>
+    </Application.Resources>
+</Application>
